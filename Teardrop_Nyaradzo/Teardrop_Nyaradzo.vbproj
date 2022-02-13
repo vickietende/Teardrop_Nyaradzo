@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{19F2DF04-E10E-448B-8076-818D606CB5B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Teardrop_Nyaradzo</RootNamespace>
+    <AssemblyName>Teardrop_Nyaradzo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Teardrop_Nyaradzo.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Teardrop_Nyaradzo.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.5\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.3\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=2.7.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.2.7.0\lib\net46\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MimeKit, Version=2.8.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.8.0\lib\net46\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Paynow, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Paynow.1.0.3\lib\net45\Paynow.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccountsManager.aspx" />
+    <Content Include="AccountStatement.aspx" />
+    <Content Include="Branches.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="css\style.css" />
+    <Content Include="CustomersReport.aspx" />
+    <Content Include="customer_registration.aspx" />
+    <Content Include="DisburseFacility.aspx" />
+    <Content Include="financial_details.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\loader.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\mylogo.png" />
+    <Content Include="images\TeardropLogo.png" />
+    <Content Include="IncomeStatement.aspx" />
+    <Content Include="Income_Expenditure.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="IssueCashBacks.aspx" />
+    <Content Include="js\chart.js" />
+    <Content Include="js\Chart.min.js" />
+    <Content Include="js\dashboard.js" />
+    <Content Include="js\data-table.js" />
+    <Content Include="js\dataTables.bootstrap4.js" />
+    <Content Include="js\documentation.js" />
+    <Content Include="js\file-upload.js" />
+    <Content Include="js\hoverable-collapse.js" />
+    <Content Include="js\jquery.dataTables.js" />
+    <Content Include="js\off-canvas.js" />
+    <Content Include="js\tabs.js" />
+    <Content Include="js\template.js" />
+    <Content Include="login.aspx" />
+    <Content Include="Manage_Groups.aspx" />
+    <Content Include="Master_Modules.aspx" />
+    <Content Include="MyCrystTest.aspx" />
+    <Content Include="NonPolicyReceipts.aspx" />
+    <Content Include="Non_PolicyHolders.aspx" />
+    <Content Include="Permissions.aspx" />
+    <Content Include="PolicyAgreement.aspx" />
+    <Content Include="PrintReceipts.aspx" />
+    <Content Include="products.aspx" />
+    <Content Include="Roles.aspx" />
+    <Content Include="rptAccStatmnt.aspx" />
+    <Content Include="rptAgreement.aspx" />
+    <Content Include="rptcustomersReport.aspx" />
+    <Content Include="rptIncmExp.aspx" />
+    <Content Include="rptIncomeStatmnt.aspx" />
+    <Content Include="rptNonPolicyReceipts.aspx" />
+    <Content Include="rptProcessedGroup.aspx" />
+    <Content Include="rptProcessedSSB.aspx" />
+    <Content Include="rptReceipts.aspx" />
+    <Content Include="rptSchedule.aspx" />
+    <Content Include="rptTrialBal.aspx" />
+    <Content Include="Send_SMS.aspx" />
+    <Content Include="SSBDownload.aspx" />
+    <Content Include="SSBUpload.aspx" />
+    <Content Include="TrialBalance.aspx" />
+    <Content Include="Users.aspx" />
+    <Content Include="vendors\base\vendor.bundle.base.css" />
+    <Content Include="vendors\base\vendor.bundle.base.js" />
+    <Content Include="vendors\chart.js\Chart.min.js" />
+    <Content Include="vendors\datatables.net-bs4\dataTables.bootstrap4.css" />
+    <Content Include="vendors\datatables.net-bs4\dataTables.bootstrap4.js" />
+    <Content Include="vendors\datatables.net\jquery.dataTables.js" />
+    <Content Include="vendors\mdi\css\materialdesignicons.min.css" />
+    <Content Include="vendors\mdi\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountsManager.aspx.designer.vb">
+      <DependentUpon>AccountsManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsManager.aspx.vb">
+      <DependentUpon>AccountsManager.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AccountStatement.aspx.designer.vb">
+      <DependentUpon>AccountStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountStatement.aspx.vb">
+      <DependentUpon>AccountStatement.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="BankEncryption64.vb" />
+    <Compile Include="Branches.aspx.designer.vb">
+      <DependentUpon>Branches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Branches.aspx.vb">
+      <DependentUpon>Branches.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomersReport.aspx.designer.vb">
+      <DependentUpon>CustomersReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersReport.aspx.vb">
+      <DependentUpon>CustomersReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="customer_registration.aspx.designer.vb">
+      <DependentUpon>customer_registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer_registration.aspx.vb">
+      <DependentUpon>customer_registration.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DisburseFacility.aspx.designer.vb">
+      <DependentUpon>DisburseFacility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisburseFacility.aspx.vb">
+      <DependentUpon>DisburseFacility.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="financial_details.aspx.designer.vb">
+      <DependentUpon>financial_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="financial_details.aspx.vb">
+      <DependentUpon>financial_details.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeStatement.aspx.designer.vb">
+      <DependentUpon>IncomeStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeStatement.aspx.vb">
+      <DependentUpon>IncomeStatement.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Income_Expenditure.aspx.designer.vb">
+      <DependentUpon>Income_Expenditure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Income_Expenditure.aspx.vb">
+      <DependentUpon>Income_Expenditure.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="IssueCashBacks.aspx.designer.vb">
+      <DependentUpon>IssueCashBacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IssueCashBacks.aspx.vb">
+      <DependentUpon>IssueCashBacks.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Manage_Groups.aspx.designer.vb">
+      <DependentUpon>Manage_Groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage_Groups.aspx.vb">
+      <DependentUpon>Manage_Groups.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Master_Modules.aspx.designer.vb">
+      <DependentUpon>Master_Modules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master_Modules.aspx.vb">
+      <DependentUpon>Master_Modules.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MyCrystTest.aspx.designer.vb">
+      <DependentUpon>MyCrystTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyCrystTest.aspx.vb">
+      <DependentUpon>MyCrystTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NonPolicyReceipts.aspx.designer.vb">
+      <DependentUpon>NonPolicyReceipts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NonPolicyReceipts.aspx.vb">
+      <DependentUpon>NonPolicyReceipts.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Non_PolicyHolders.aspx.designer.vb">
+      <DependentUpon>Non_PolicyHolders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Non_PolicyHolders.aspx.vb">
+      <DependentUpon>Non_PolicyHolders.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Permissions.aspx.designer.vb">
+      <DependentUpon>Permissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Permissions.aspx.vb">
+      <DependentUpon>Permissions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PolicyAgreement.aspx.designer.vb">
+      <DependentUpon>PolicyAgreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyAgreement.aspx.vb">
+      <DependentUpon>PolicyAgreement.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PrintReceipts.aspx.designer.vb">
+      <DependentUpon>PrintReceipts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintReceipts.aspx.vb">
+      <DependentUpon>PrintReceipts.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="products.aspx.designer.vb">
+      <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products.aspx.vb">
+      <DependentUpon>products.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Roles.aspx.designer.vb">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.aspx.vb">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptAccountStatements.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAccountStatements.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptAccStatmnt.aspx.designer.vb">
+      <DependentUpon>rptAccStatmnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptAccStatmnt.aspx.vb">
+      <DependentUpon>rptAccStatmnt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptAgreement.aspx.designer.vb">
+      <DependentUpon>rptAgreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptAgreement.aspx.vb">
+      <DependentUpon>rptAgreement.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptClientReceipt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptClientReceipt.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptcustomersReport.aspx.designer.vb">
+      <DependentUpon>rptcustomersReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptcustomersReport.aspx.vb">
+      <DependentUpon>rptcustomersReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptGroupProcessed.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGroupProcessed.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptIncmExp.aspx.designer.vb">
+      <DependentUpon>rptIncmExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptIncmExp.aspx.vb">
+      <DependentUpon>rptIncmExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptIncomeExpenditure.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptIncomeExpenditure.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptIncomeStatement.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptIncomeStatement.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptIncomeStatmnt.aspx.designer.vb">
+      <DependentUpon>rptIncomeStatmnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptIncomeStatmnt.aspx.vb">
+      <DependentUpon>rptIncomeStatmnt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptNonPolicyReceipts.aspx.designer.vb">
+      <DependentUpon>rptNonPolicyReceipts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptNonPolicyReceipts.aspx.vb">
+      <DependentUpon>rptNonPolicyReceipts.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptNon_PolicyReceipt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNon_PolicyReceipt.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPaymentSchedule.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPaymentSchedule.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPolicyAgreement.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPolicyAgreement.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptProcessedGroup.aspx.designer.vb">
+      <DependentUpon>rptProcessedGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptProcessedGroup.aspx.vb">
+      <DependentUpon>rptProcessedGroup.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptProcessedSSB.aspx.designer.vb">
+      <DependentUpon>rptProcessedSSB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptProcessedSSB.aspx.vb">
+      <DependentUpon>rptProcessedSSB.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptReceipts.aspx.designer.vb">
+      <DependentUpon>rptReceipts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptReceipts.aspx.vb">
+      <DependentUpon>rptReceipts.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptReportCustomers.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReportCustomers.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptSchedule.aspx.designer.vb">
+      <DependentUpon>rptSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptSchedule.aspx.vb">
+      <DependentUpon>rptSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptSSBProcessed.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSSBProcessed.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptTrialBal.aspx.designer.vb">
+      <DependentUpon>rptTrialBal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptTrialBal.aspx.vb">
+      <DependentUpon>rptTrialBal.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptTrialBalance.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTrialBalance.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Send_SMS.aspx.designer.vb">
+      <DependentUpon>Send_SMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Send_SMS.aspx.vb">
+      <DependentUpon>Send_SMS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SSBDownload.aspx.designer.vb">
+      <DependentUpon>SSBDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SSBDownload.aspx.vb">
+      <DependentUpon>SSBDownload.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SSBUpload.aspx.designer.vb">
+      <DependentUpon>SSBUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SSBUpload.aspx.vb">
+      <DependentUpon>SSBUpload.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="TrialBalance.aspx.designer.vb">
+      <DependentUpon>TrialBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrialBalance.aspx.vb">
+      <DependentUpon>TrialBalance.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Users.aspx.designer.vb">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.aspx.vb">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="rptAccountStatements.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAccountStatements.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptClientReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClientReceipt.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptGroupProcessed.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGroupProcessed.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptIncomeExpenditure.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptIncomeExpenditure.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptIncomeStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptIncomeStatement.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptNon_PolicyReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNon_PolicyReceipt.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptPaymentSchedule.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPaymentSchedule.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptPolicyAgreement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPolicyAgreement.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptReportCustomers.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReportCustomers.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptSSBProcessed.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSSBProcessed.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rptTrialBalance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTrialBalance.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\maps\style.css.map" />
+    <Content Include="fonts\.DS_Store" />
+    <Content Include="fonts\Roboto\.DS_Store" />
+    <Content Include="fonts\Roboto\Roboto-Black.eot" />
+    <Content Include="fonts\Roboto\Roboto-Black.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Black.woff" />
+    <Content Include="fonts\Roboto\Roboto-Black.woff2" />
+    <Content Include="fonts\Roboto\Roboto-Bold.eot" />
+    <Content Include="fonts\Roboto\Roboto-Bold.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Bold.woff" />
+    <Content Include="fonts\Roboto\Roboto-Bold.woff2" />
+    <Content Include="fonts\Roboto\Roboto-Light.eot" />
+    <Content Include="fonts\Roboto\Roboto-Light.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Light.woff" />
+    <Content Include="fonts\Roboto\Roboto-Light.woff2" />
+    <Content Include="fonts\Roboto\Roboto-Medium.eot" />
+    <Content Include="fonts\Roboto\Roboto-Medium.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Medium.woff" />
+    <Content Include="fonts\Roboto\Roboto-Medium.woff2" />
+    <Content Include="fonts\Roboto\Roboto-Regular.eot" />
+    <Content Include="fonts\Roboto\Roboto-Regular.ttf" />
+    <Content Include="fonts\Roboto\Roboto-Regular.woff" />
+    <Content Include="fonts\Roboto\Roboto-Regular.woff2" />
+    <Content Include="js\.DS_Store" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="scss\.DS_Store" />
+    <Content Include="scss\style.scss" />
+    <Content Include="scss\_background.scss" />
+    <Content Include="scss\_demo.scss" />
+    <Content Include="scss\_fonts.scss" />
+    <Content Include="scss\_footer.scss" />
+    <Content Include="scss\_functions.scss" />
+    <Content Include="scss\_layouts.scss" />
+    <Content Include="scss\_misc.scss" />
+    <Content Include="scss\_navbar.scss" />
+    <Content Include="scss\_reset.scss" />
+    <Content Include="scss\_sidebar.scss" />
+    <Content Include="scss\_typography.scss" />
+    <Content Include="scss\_utilities.scss" />
+    <Content Include="scss\_variables.scss" />
+    <Content Include="scss\_vertical-wrapper.scss" />
+    <Content Include="scss\components\.DS_Store" />
+    <Content Include="scss\components\_badges.scss" />
+    <Content Include="scss\components\_bootstrap-progress.scss" />
+    <Content Include="scss\components\_buttons.scss" />
+    <Content Include="scss\components\_cards.scss" />
+    <Content Include="scss\components\_checkbox-radio.scss" />
+    <Content Include="scss\components\_dropdown.scss" />
+    <Content Include="scss\components\_forms.scss" />
+    <Content Include="scss\components\_icons.scss" />
+    <Content Include="scss\components\_lists.scss" />
+    <Content Include="scss\components\_tables.scss" />
+    <Content Include="scss\components\plugin-overrides\_data-tables.scss" />
+    <Content Include="scss\landing-screens\_auth.scss" />
+    <Content Include="scss\mixins\.DS_Store" />
+    <Content Include="scss\mixins\_animation.scss" />
+    <Content Include="scss\mixins\_badges.scss" />
+    <Content Include="scss\mixins\_blockqoute.scss" />
+    <Content Include="scss\mixins\_buttons.scss" />
+    <Content Include="scss\mixins\_cards.scss" />
+    <Content Include="scss\mixins\_misc.scss" />
+    <Content Include="Uploads\GroupDownload.xlsx" />
+    <Content Include="Uploads\SSBDownload %285%29.xlsx" />
+    <Content Include="Uploads\SSBDownload %286%29.xlsx" />
+    <Content Include="vendors\.DS_Store" />
+    <Content Include="vendors\base\bootstrap.min.js.map" />
+    <Content Include="vendors\mdi\css\materialdesignicons.min.css.map" />
+    <Content Include="vendors\mdi\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="vendors\mdi\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52567</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52567/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

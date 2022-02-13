@@ -1,0 +1,281 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="Teardrop_Nyaradzo.Site1" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+      <!-- Required meta tags -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <title>Teardrop.</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"/>
+  <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css"/>
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css"/>
+          
+    <%--<link href="css/bootstrap.min.css" rel="stylesheet" />  --%>
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.ico"/>
+     
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+   <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+          <a class="navbar-brand brand-logo" href="index.aspx"><img src="images/logo.png" alt="logo" height="50" width="50"/></a>
+          
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-sort-variant"></span>
+          </button>
+        </div> 
+          
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <h4>Funeral Services Management System</h4>
+          <div>
+      <%--  <h6>Session : <asp:Label ID="lblSessionTime" runat="server"></asp:Label> minutes.</h6>--%>
+        
+       
+    </div>
+          <div style="padding-left:350px;">
+               <a class="navbar-brand brand-logo" href="index.aspx"><img src="images/TeardropLogo.png" alt="logo" height="50" width="120"/></a>
+              </div>
+        <ul class="navbar-nav navbar-nav-right">
+        <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                <i class="mdi mdi-account icon-lg mr-3 text-primary"></i>
+                 <span class="nav-profile-name"><asp:Label runat="server" ID="lblbranch" Text="Branch"></asp:Label></span>
+              <span class="nav-profile-name"><asp:Label runat="server" ID="lblusername" Text="User"></asp:Label></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+            <a class="dropdown-item" href="login.aspx">
+                <i class="mdi mdi-logout text-primary"> Logout</i>
+           
+              </a>
+                <a class="dropdown-item" href="ChangePassword.aspx">
+                <i class="mdi mdi-account-convert text-primary">Change Password</i>
+           
+              </a>
+    
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.aspx">
+              <i class="mdi mdi-home menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-account menu-icon"></i>
+              <span class="menu-title">Customer Details</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul runat="server" id="Customer_Details" class="nav flex-column sub-menu">
+                <li class="nav-item" runat="server" id="Registration" visible="false"> <a class="nav-link" href="customer_registration.aspx">Customer Registration</a></li>
+
+                      <li class="nav-item" runat="server" id="PolicyAgreement" visible="false"> <a class="nav-link" href="PolicyAgreement.aspx"> View Policy Agreement</a></li>
+
+                    <li class="nav-item" runat="server" id="Manage_Groups" visible="false"> <a class="nav-link" href="Manage_Groups.aspx">Group Management</a></li>
+                <li class="nav-item" runat="server" id="financial_details" visible="false"> <a class="nav-link" href="financial_details.aspx">Financial Details</a></li>
+                    <li class="nav-item" runat="server" id="PrintReceipts" visible="false"> <a class="nav-link" href="PrintReceipts.aspx">Receipting</a></li>
+                  <li class="nav-item" runat="server" id="Fund_Policy_Facility" visible="false"> <a class="nav-link" href="DisburseFacility.aspx">Fund Policy Facility</a></li>
+                    <li class="nav-item" runat="server" id="Non_PolicyHolders" visible="false"> <a class="nav-link" href="Non_PolicyHolders.aspx">Non-Policy Holder Facility </a></li>
+                    <li class="nav-item" runat="server" id="NonPolicyReceipts" visible="false"> <a class="nav-link" href="NonPolicyReceipts.aspx">Non-Policy Receipt</a></li>
+                    <li class="nav-item" runat="server" id="IssueCashBacks" visible="false"> <a class="nav-link" href="IssueCashBacks.aspx">Issue CashBacks</a></li>
+                   <li class="nav-item" runat="server" id="SSB_Download" visible="false"> <a class="nav-link" href="SSBDownload.aspx">SSB Download</a></li>
+                   <li class="nav-item" runat="server" id="SSB_Upload" visible="false"> <a class="nav-link" href="SSBUpload.aspx">SSB Upload</a></li>
+                      <li class="nav-item" runat="server" id="Send_SMS" visible="false"> <a class="nav-link" href="Send_SMS.aspx">Send SMS</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item" runat="server" id="Product_Management" visible="false">
+            <a class="nav-link" href="products.aspx">
+              <i class="mdi mdi-cart menu-icon"></i>
+              <span class="menu-title">Products Management</span>
+            </a>
+          </li>
+        <%--  <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-chart-pie menu-icon"></i>
+              <span class="menu-title">Charts</span>
+            </a>
+          </li>--%>
+         <%--      <li class="nav-item" runat="server" id="Manage_Accounts" visible="false">
+            <a class="nav-link" href="AccountsManager.aspx">
+              <i class="mdi mdi-clipboard-text menu-icon"></i>
+              <span class="menu-title">Manage Accounts</span>
+            </a>
+          </li>--%>
+
+
+                 <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth2" aria-expanded="false" aria-controls="auth2">
+              <i class="mdi mdi-clipboard-text menu-icon"></i>
+              <span class="menu-title">Accounting</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth2">
+              <ul class="nav flex-column sub-menu" runat="server" id="Ul1">
+               <li class="nav-item" runat="server" id="Manage_Accounts" visible="false"> <a class="nav-link" href="AccountsManager.aspx">Manage Accounts</a></li>
+                <li class="nav-item" runat="server" id="Account_Statement" visible="false"> <a class="nav-link" href="AccountStatement.aspx">Account Statement</a></li>
+                <li class="nav-item" runat="server" id="Trial_Balance" visible="false"> <a class="nav-link" href="TrialBalance.aspx">Trial Balance</a></li>
+                <li class="nav-item" runat="server" id="Income_Expenditure" visible="false"> <a class="nav-link" href="Income_Expenditure.aspx">Income and Expenditure</a></li>
+                    <li class="nav-item" runat="server" id="Income_Statement" visible="false"> <a class="nav-link" href="IncomeStatement.aspx">Income Statement</a></li>
+              </ul>
+            </div>
+          </li>
+     
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="mdi mdi-file-multiple menu-icon"></i>
+              <span class="menu-title">Reports</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu" runat="server" id="Reports">
+                <li class="nav-item" runat="server" id="Customers_Report" visible="false"> <a class="nav-link" href="CustomersReport.aspx"> Customers Report </a></li>
+               
+                <li class="nav-item" runat="server" id="SSB_Report" visible="false"> <a class="nav-link" href="#"> SSB Report </a></li>
+                <li class="nav-item" runat="server" id="Active_Clients" visible="false"> <a class="nav-link" href="#"> Active Clients </a></li>
+                <li class="nav-item" runat="server" id="Non_Active_Clients" visible="false"> <a class="nav-link" href="#"> Non-Active Clients </a></li>
+                <li class="nav-item" runat="server" id="Customer_Premiums" visible="false"> <a class="nav-link" href="#"> Customer Premiums </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth1" aria-expanded="false" aria-controls="auth1">
+              <i class="mdi mdi-settings menu-icon"></i>
+              <span class="menu-title">System Administration</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth1">
+              <ul runat="server" id="System_Admin"  class="nav flex-column sub-menu">
+                <li class="nav-item" runat="server" id="Add_User" visible="false"> <a class="nav-link" href="Users.aspx"> Add User </a></li>
+                <li class="nav-item" runat="server" id="Role_Mgt" visible="false"> <a class="nav-link" href="Roles.aspx"> Role Management </a></li>
+                <li class="nav-item" runat="server" id="Add_Branch" visible="false"> <a class="nav-link" href="Branches.aspx"> Add Branch </a></li>
+                <li class="nav-item" runat="server" id="System_Modules" visible="false"> <a class="nav-link" href="Master_Modules.aspx">System Modules</a></li>
+                <li class="nav-item" runat="server" id="Permissions" visible="false"> <a class="nav-link" href="Permissions.aspx">System Permissions</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+           <div class="content-wrapper">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+           
+                     </asp:ContentPlaceHolder>
+            </div>
+    
+      <!-- main-panel ends -->
+    </div>
+  
+
+    <!-- page-body-wrapper ends -->
+        <footer class="footer">
+                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <h3 style="font-size: 10px; margin: 0px;">Session Idle:<span id="secondsIdle"></span>seconds.</h3>
+        <asp:LinkButton ID="lnkFake" runat="server"/>
+       <ajaxToolkit:ModalPopupExtender ID="mpeTimeout" BehaviorID="mpeTimeout" runat="server"  PopupControlID="pnlPopup" TargetControlID="lnkFake" OkControlID="btnYes" CancelControlID="btnNo" BackgroundCssClass="modalBackground" OnOkScript="ResetSession()"></ajaxToolkit:ModalPopupExtender>
+        <asp:Panel ID="pnlPopup" runat="server" CssClass="modalPopup" Style="text-align: center" BorderColor="#0066ff" BorderStyle="Solid" BackColor="white" class="header">
+            <h4 style="color: white"><b>Session Expiry Alert</b> </h4>
+            <asp:Label ID="Label1" runat="server" BackColor="#0099ff" Font-Bold="True" Text="Session Expiry Alert" Font-Size="Large" ForeColor="DarkBlue" Style="margin-top: 0px" Width="363px" Visible="true"></asp:Label>
+            Your Session will expire in<span id="seconds"></span>seconds.
+            Do you want to continue?
+            <div class="footer">
+                <asp:Button ID="btnYes" runat="server" Text="Yes" CssClass="yes" OnClick="btnYes_Click"/>
+                <asp:Button ID="btnNo" runat="server" Text="No" CssClass="no" OnClick="btnNo_Click"/>
+            </div>
+        </asp:Panel>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="#" target="_blank">CodeDimensions</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">a product of CodeDimensions Pvt(Ltd)  <i class="mdi mdi-thumb-up text-danger"></i></span>
+          </div>
+        </footer>
+  </div>
+
+  <!-- container-scroller -->
+       
+          <!-- plugins:js -->
+  <script src="vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+      <%--      <script src="js/bootstrap.min.js"></script> --%>
+  <script src="js/dashboard.js"></script>
+  <script src="js/data-table.js"></script>
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script>
+         <script type="text/javascript">
+        function SessionExpireAlert(timeout) {
+            var seconds = timeout / 1000;
+            document.getElementsByName("secondsIdle").innerHTML = seconds;
+            document.getElementsByName("seconds").innerHTML = seconds;
+            setInterval(function () {
+                seconds--;
+                document.getElementById("seconds").innerHTML = seconds;
+                document.getElementById("secondsIdle").innerHTML = seconds;
+            }, 1000);
+            setTimeout(function () {
+                //Show Popup before 20 seconds of timeout.
+                $find("mpeTimeout").show();
+            }, timeout - 20 * 1000);
+            setTimeout(function () {
+                window.location.href = "login.aspx";
+            }, timeout);
+            return false;
+        };
+        function ResetSession() {
+            //Redirect to refresh Session.
+            window.location = "login.aspx";
+        }
+    </script>
+     
+      
+  <!-- End custom js for this page-->
+    </form>
+</body>
+
+</html>
